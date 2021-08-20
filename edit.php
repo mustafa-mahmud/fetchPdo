@@ -1,14 +1,18 @@
 <?php
 require_once 'db.php';
 
-$data = json_decode(file_get_contents("php://input"));
+if (isset($_POST)) {
 
-if ($data) {
-  $data = explode(',', $data);
-  $id = $data[0];
-  $name = $data[1];
-  $pass = $data[2];
+  $id = $_POST['id'];
+  $name = $_POST['insertname'];
+  $pass = $_POST['insertpass'];
 
-  echo $id, $name, $pass;
+  $sql = "UPDATE users SET name=:name,pass=:pass WHERE id=:id";
+  $stmt = $conn->prepare($sql);
+  $stmt->execute(['id' => $id, 'name' => $name, 'pass' => $pass]);
+
+  if ($stmt->rowCount()) {
+    echo 'Updated successfully';
+  }
 }
 ?>
