@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CRUD with Fetch Api</title>
+		<style>
+			#db-data {
+				width: 30rem;
+				display: flex;
+				justify-content: space-between;
+				border: 1px solid;
+				padding: 1rem;
+			}
+
+			#edit,
+			#del {
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<form id="insert">
+			<h3>Insert</h3>
+			<input type="text" placeholder="Name..." name="insertname" id="insertname" />
+			<br>
+			<input type="password" name="insertpass" id="insertpass" placeholder="Password..." />
+			<br>
+			<input type="submit" value="Submit" />
+			<p id="insertmsg"></p>
+		</form>
+		<hr>
+		<br>
+		<div id="container-data">
+			<!-- <p id="db-data">
+				<span>1</span>
+				<span>Rony</span>
+				<span>123</span>
+				<a id="edit" href="update.php?id=1">Edit</a>
+				<a id="del" href="delete.php?id=1">Delete</a>
+			</p> -->
+		</div>
+
+		<button id="showall">Show All</button>
+		<br>
+
+		<script src="app.js"></script>
+	</body>
+
+</html>
